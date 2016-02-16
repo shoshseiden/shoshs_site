@@ -1,7 +1,15 @@
 {% extends "site_base.html" %}
 
 {% block body %}
+<h1>Websites</h1>
+<p>
+  These are websites that I have created.
+</p>
 
-<h1>websites will go on this page.</h1>
+<ul>
+  {% for website in website_list %}
+  <li><a href="{{ website.website_url }}">{{ website.website_name }}</a><li>
+  {% endfor %}
+</ul>
 
 {% endblock %}

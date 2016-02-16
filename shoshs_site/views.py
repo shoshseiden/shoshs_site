@@ -11,16 +11,16 @@ from .models import Website, Graphic
 
 
 class WebsiteView(ListView):
-    model = Website
     template_name = "websites.html"
+    context_object_name = "website_list"
 
     def queryset(self):
-        return Graphic.objects.order_by(website_name)
+        return Website.objects.order_by("website_name")
 
 
 class GraphicView(ListView):
-    model = Graphic
     template_name = "graphics.html"
+    context_object_name = "graphics_list"
 
     def queryset(self):
-        return Graphic.objects.order_by(graphic_image_description)
+        return Graphic.objects.order_by("graphic_image_description")
